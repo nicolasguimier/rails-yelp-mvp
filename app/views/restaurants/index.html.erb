@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>All restaurants</h1>
+      <% if @restaurants.empty? %>
+      <p>Sorry, no restaurant</p>
+      <% else %>
+      <ul>
+        <% @restaurants.each do |restaurant| %>
+        <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

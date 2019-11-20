@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <div class="row">
+    <div class="col">
+      <p><em>Category: <%= @restaurant.category %></em></p>
+      <p>Address: <%= @restaurant.address %></p>
+      <p>Phone: <%= @restaurant.phone_number %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= link_to "Back to the restaurants", restaurants_path%>
+    </div>
+  </div>
+</div>
+
