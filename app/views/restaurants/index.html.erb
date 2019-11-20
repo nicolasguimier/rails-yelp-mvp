@@ -1,7 +1,7 @@
 <div class="container">
+  <h1>All restaurants</h1>
   <div class="row">
-    <div class="col">
-      <h1>All restaurants</h1>
+    <div class="col-6">
       <% if @restaurants.empty? %>
       <p>Sorry, no restaurant</p>
       <% else %>
@@ -11,6 +11,10 @@
         <% end %>
       </ul>
       <% end %>
+    </div>
+    <div class="col-6">
+      <%= link_to "Create new restaurant", new_restaurant_path %>
+
     </div>
   </div>
 </div>
