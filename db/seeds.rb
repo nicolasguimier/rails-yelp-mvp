@@ -9,44 +9,93 @@ puts 'Destroy restaurants'
 Restaurant.destroy_all
 
 puts 'Create new restaurants'
-restaurants = [
+resto1 = Restaurant.new(
+  name: 'Totum',
+  address: 'Ile de Nantes, Nantes',
+  phone_number: '06 50 45 12 14',
+  category: 'french'
+)
+resto1.save!
+
+resto2 = Restaurant.new(
+  name: "La tour d'Argent",
+  address: 'Paris',
+  phone_number: '',
+  category: 'french'
+)
+resto2.save!
+
+resto3 = Restaurant.new(
+  name: 'Les délices de Pekin',
+  address: 'Langstross Grand Rue, Strasbourg',
+  phone_number: '',
+  category: 'chinese'
+)
+resto3.save!
+
+resto4 = Restaurant.new(
+  name: 'les Cailloux',
+  address: 'rue de la butte aux Cailles, Paris',
+  phone_number: '+331 65 12 45 78',
+  category: 'italian'
+)
+resto4.save!
+
+resto5 = Restaurant.new(
+  name: 'Chez Léon',
+  address: 'rue des Carmes, Nantes',
+  phone_number: '02 45 78 41 44',
+  category: 'belgian'
+)
+resto5.save!
+
+resto6 = Restaurant.new(
+  name: 'Sushi Shop',
+  address: 'Rue de Strasbourg, Nantes',
+  phone_number: '',
+  category: 'japanese'
+)
+resto6.save!
+
+puts 'end of restaurants'
+
+puts 'Destroy reviews'
+Review.destroy_all
+
+puts 'Create new reviews'
+reviews = [
   {
-    name: 'Totum',
-    address: 'Ile de Nantes, Nantes',
-    phone_number: '06 50 45 12 14',
-    category: 'french'
+    content: 'Really good',
+    rating: 5,
+    restaurant: resto1
   },
   {
-    name: "La tour d'Argent",
-    address: 'Paris',
-    phone_number: '',
-    category: 'french'
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur amet vitae illo accusantium, illum deserunt recusandae id eveniet magni quidem facilis, iure similique ea eaque quis impedit in nihil ratione.',
+    rating: 3,
+    restaurant: resto1
   },
   {
-    name: 'Les délices de Pekin',
-    address: 'Langstross Grand Rue, Strasbourg',
-    phone_number: '',
-    category: 'chinese'
+    content: 'Optio, quidem, quas? Earum fugiat expedita eum reiciendis ipsum ratione, quam minima vitae. Atque.',
+    rating: 4,
+    restaurant: resto1
   },
   {
-    name: 'les Cailloux',
-    address: 'rue de la butte aux Cailles, Paris',
-    phone_number: '+331 65 12 45 78',
-    category: 'italian'
+    content: 'I will never go again',
+    rating: 1,
+    restaurant: resto2
   },
   {
-    name: 'Chez Léon',
-    address: 'rue des Carmes, Nantes',
-    phone_number: '02 45 78 41 44',
-    category: 'belgium'
+    content: 'Really good',
+    rating: 5,
+    restaurant: resto2
   },
   {
-    name: 'Sushi Shop',
-    address: 'Rue de Strasbourg, Nantes',
-    phone_number: '',
-    category: 'japanese'
+    content: 'Perfect',
+    rating: 5,
+    restaurant: resto3
   }
 ]
+Review.create!(reviews)
+puts 'end of reviews'
 
-Restaurant.create!(restaurants)
 puts 'Finished!'

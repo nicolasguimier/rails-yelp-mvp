@@ -1,16 +1,32 @@
-<div class="container">
-  <h1><%= @restaurant.name %></h1>
-  <div class="row">
-    <div class="col">
-      <p><em>Category: <%= @restaurant.category %></em></p>
-      <p>Address: <%= @restaurant.address %></p>
-      <p>Phone: <%= @restaurant.phone_number %></p>
-    </div>
+<h1><%= @restaurant.name %></h1>
+<div class="row">
+  <div class="col-6">
+    <h2>Infos</h2>
+    <p><em>Category: <%= @restaurant.category %></em></p>
+    <p>Address: <%= @restaurant.address %></p>
+    <p>Phone: <%= @restaurant.phone_number %></p>
   </div>
-  <div class="row">
-    <div class="col">
-      <%= link_to "Back to the restaurants", restaurants_path%>
-    </div>
+  <div class="col-6">
+    <h2>Reviews</h2>
+    <% if @restaurant.reviews.empty? %>
+      <p>No review for now...</p>
+    <% else %>
+      <% @restaurant.reviews.each do |review| %>
+        <div class="row review">
+          <div class="col-10">
+            <%= review.content %>
+          </div>
+          <div class="col-2">
+            Rating: <%= review.rating %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= link_to "Back to the restaurants", restaurants_path, class:'btn btn-info'%>
   </div>
 </div>
 
