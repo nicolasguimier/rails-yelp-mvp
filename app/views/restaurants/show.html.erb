@@ -12,7 +12,7 @@
       <p>No review for now...</p>
     <% else %>
       <% @restaurant.reviews.each do |review| %>
-        <div class="row review">
+        <div class="row mb-3 border-bottom">
           <div class="col-10">
             <%= review.content %>
           </div>
@@ -22,6 +22,7 @@
         </div>
       <% end %>
     <% end %>
+    <%= link_to "Create review", new_restaurant_review_path(@restaurant), class:'btn btn-primary' %>
   </div>
 </div>
 <div class="row">
